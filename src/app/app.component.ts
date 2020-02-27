@@ -17,7 +17,7 @@ export class AppComponent {
   }
 
   // Transfer Items Between Lists
-  MoviesList = [
+  TodosList = [
     'Einkaufen',
     'Wäsche waschen',
     'Auto tanken',
@@ -25,7 +25,7 @@ export class AppComponent {
     'Eltern Anrufen',
   ];
 
-  MoviesWatched = [
+  DoneTodosList = [
   ];
 
   onDrop(event: CdkDragDrop<string[]>) {
@@ -40,15 +40,15 @@ export class AppComponent {
   }
 
   addTodo() {
-    this.MoviesList.push(this.todoForm.value.todoInput);
+    this.TodosList.push(this.todoForm.value.todoInput);
   }
 
-  deleteTodo(moviesWatched) {
-    console.log(moviesWatched);
-    const index = this.MoviesWatched.indexOf(moviesWatched);
+  deleteTodo(doneTodosList) {
+    console.log(doneTodosList);
+    const index = this.DoneTodosList.indexOf(doneTodosList);
     console.log(index);
     if(index > -1) {
-      this.MoviesWatched.splice(index, 1);
+      this.DoneTodosList.splice(index, 1);
     }
   }
 }

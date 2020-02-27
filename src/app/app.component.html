@@ -22,12 +22,12 @@
     <h2>todo's:</h2>
     <div
             cdkDropList
-            #moviesList="cdkDropList"
-            [cdkDropListData]="MoviesList"
-            [cdkDropListConnectedTo]="[doneMovieList]"
-            class="movie-list"
+            #todosList="cdkDropList"
+            [cdkDropListData]="TodosList"
+            [cdkDropListConnectedTo]="[doneTotosList]"
+            class="todo-list"
             (cdkDropListDropped)="onDrop($event)">
-      <div class="movie-block" *ngFor="let moviesList of MoviesList" cdkDrag>{{moviesList}}</div>
+      <div class="todo-block" *ngFor="let todosList of TodosList" cdkDrag>{{todosList}}</div>
     </div>
   </div>
 
@@ -35,14 +35,14 @@
     <h2>done:</h2>
     <div
             cdkDropList
-            #doneMovieList="cdkDropList"
-            [cdkDropListData]="MoviesWatched"
-            [cdkDropListConnectedTo]="[moviesList]"
-            class="movie-list"
+            #doneTotosList="cdkDropList"
+            [cdkDropListData]="DoneTodosList"
+            [cdkDropListConnectedTo]="[todosList]"
+            class="todo-list"
             (cdkDropListDropped)="onDrop($event)">
-      <div class="movie-block" *ngFor="let moviesWatched of MoviesWatched" cdkDrag>
-          {{moviesWatched}}
-          <button mat-button color="warn" (click)="deleteTodo(moviesWatched)">delete</button>
+      <div class="todo-block" *ngFor="let doneTodosList of DoneTodosList" cdkDrag>
+          {{doneTodosList}}
+          <button mat-button color="warn" (click)="deleteTodo(doneTodosList)">delete</button>
       </div>
     </div>
   </div>
