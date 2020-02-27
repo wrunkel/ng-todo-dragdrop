@@ -9,6 +9,17 @@
     <div class="spacer"></div>
 </div>
 
+<div class="container">
+  <h2>shopping list:</h2>
+  <div
+    cdkDropList
+    #todosList="cdkDropList"
+    [cdkDropListData]="ShoppingList"
+    class="todo-list"
+    (cdkDropListDropped)="onDrop($event)">
+  <div class="todo-block" *ngFor="let shoppingList of ShoppingList" cdkDrag>{{shoppingList | json}}</div>
+</div>
+
 <div class="content" role="main">
   <div class="container">
     <form [formGroup]="todoForm">

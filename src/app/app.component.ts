@@ -1,20 +1,30 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import {FormControl, FormGroup} from '@angular/forms';
+import {ShoppingListItem} from './shopping-list.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   todoForm: FormGroup;
+
+
 
   constructor() {
     this.todoForm = new FormGroup({
       todoInput: new FormControl('')
     });
   }
+
+  ShoppingList: ShoppingListItem[] = [
+    { title: 'Äpfel', amount: 2 },
+    { title: 'Bananen', amount: 3 },
+    { title: 'Brot', amount: 1 }
+  ];
 
   // Transfer Items Between Lists
   TodosList = [
