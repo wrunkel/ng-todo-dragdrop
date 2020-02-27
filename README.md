@@ -1,5 +1,9 @@
 # TodoList
 
+An Angular todo-list demo app, to test Angular Material DragDrop:
+
+https://material.angular.io/cdk/drag-drop/overview
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
 ## Development server
