@@ -39,9 +39,16 @@ export class AppComponent {
     }
   }
 
-  logTodo() {
-    console.log(this.todoForm.value.todoInput);
+  addTodo() {
     this.MoviesList.push(this.todoForm.value.todoInput);
+  }
 
+  deleteTodo(moviesWatched) {
+    console.log(moviesWatched);
+    const index = this.MoviesWatched.indexOf(moviesWatched);
+    console.log(index);
+    if(index > -1) {
+      this.MoviesWatched.splice(index, 1);
+    }
   }
 }

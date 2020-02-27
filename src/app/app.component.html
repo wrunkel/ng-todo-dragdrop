@@ -16,7 +16,7 @@
         <mat-label>add toto</mat-label>
         <input matInput placeholder="go shopping" formControlName="todoInput">
       </mat-form-field>
-      <button mat-raised-button color="primary" class="button" type="submit" (click)="logTodo(this.todoInput)">Add todo</button>
+      <button mat-raised-button color="primary" class="button" type="submit" (click)="addTodo(this.todoInput)">Add todo</button>
     </form>
 
     <h2>todo's:</h2>
@@ -40,7 +40,10 @@
             [cdkDropListConnectedTo]="[moviesList]"
             class="movie-list"
             (cdkDropListDropped)="onDrop($event)">
-      <div class="movie-block" *ngFor="let moviesWatched of MoviesWatched" cdkDrag>{{moviesWatched}}</div>
+      <div class="movie-block" *ngFor="let moviesWatched of MoviesWatched" cdkDrag>
+          {{moviesWatched}}
+          <button mat-button color="warn" (click)="deleteTodo(moviesWatched)">delete</button>
+      </div>
     </div>
   </div>
 </div>
